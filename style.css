@@ -5,18 +5,34 @@
   font-family: 'Lato', sans-serif;
 }
 
+.container {
+  justify-content: center;
+  padding: 20px 100px;
+  z-index: 10;
+}
+
+.verde {
+  height: 120px;
+  background-color: #009788;
+  z-index: 5;
+}
+
+.giallo {
+  background-color: #dbdbd1;
+  height: 100vh;
+}
+
 .testo-grigio {
-  font-size: 14;
+  font-size: 14px;
+  color: gray;
+}
+
+.gray {
   color: gray;
 }
 
 .flex {
   display: flex;
-}
-
-.container {
-  padding: 25px 190px;
-  background-color: #009688;
 }
 
 .chat-bubble {
@@ -26,17 +42,8 @@
   border-radius: 12px;
 }
 
-.sent {
-  background-color: #d5f9ba;
-}
-
-.received {
-  background-color: #ffffff;
-}
-
 header {
   background-color: #eaeaea;
-  justify-content: space-between;
   justify-content: space-between;
   border-right: 1px solid black;
   align-items: center;
@@ -48,7 +55,17 @@ header {
 }
 
 #left-side {
-  width: 540px;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  height: 790px;
+}
+
+#right-side {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  height: 790px;
 }
 
 .avatar {
@@ -66,8 +83,14 @@ header {
   gap: 10px;
 }
 
+.main-left {
+  flex-direction: column;
+  height: 100%;
+}
+
 .notifiche {
   background-color: #8edafc;
+  height: 80px;
 }
 
 .fa-bell-slash {
@@ -79,8 +102,8 @@ header {
 
 .cerca {
   background-color: #fafafa;
-  height: 50px;
   padding: 8px;
+  height: 50px;
 }
 
 .cerca-chat {
@@ -96,10 +119,14 @@ header {
   padding-left: 40px;
 }
 
-.amici {
+.lista-amici {
+  height: 590px;
   background-color: #ffffff;
+  overflow-y: scroll;
+}
+
+.amici {
   border-top: 1px solid lightgray;
-  height: 100%;
 }
 
 .info-amici {
@@ -108,4 +135,48 @@ header {
 
 li {
   list-style: none;
+}
+
+.chat {
+  flex-grow: 1;
+  background-image: url('img/mine.jpg');
+  overflow-y: auto;
+  flex-direction: column;
+  gap: 10px;
+  padding: 55px 0;
+}
+
+.sent {
+  background-color: #d5f9ba;
+  margin-right: 100px;
+  align-self: flex-end;
+}
+
+.received {
+  background-color: #ffffff;
+  margin-left: 100px;
+  align-self: flex-start;
+}
+
+.barra-scrittura {
+  background-color: #f3eeea;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.barra {
+  flex-grow: 1;
+}
+
+.barra .cerca-chat {
+  padding-left: 0;
+  border-radius: 70px;
+}
+
+.barra {
+  padding: 0 40px;
+}
+
+.barra .search-box {
+  border-radius: 4px;
 }

@@ -172,6 +172,7 @@ createApp({
           ],
         },
       ],
+      indiceContacts: 0,
     };
   },
 }).mount('#app');
