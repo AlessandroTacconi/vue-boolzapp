@@ -5,6 +5,20 @@
   font-family: 'Lato', sans-serif;
 }
 
+.testo-grigio {
+  font-size: 14;
+  color: gray;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  padding: 25px 190px;
+  background-color: #009688;
+}
+
 .chat-bubble {
   width: 310px;
   padding: 20px 0;
@@ -18,4 +32,80 @@
 
 .received {
   background-color: #ffffff;
+}
+
+header {
+  background-color: #eaeaea;
+  justify-content: space-between;
+  justify-content: space-between;
+  border-right: 1px solid black;
+  align-items: center;
+}
+
+.scheda {
+  height: 70px;
+  padding: 10px 25px 10px 10px;
+}
+
+#left-side {
+  width: 540px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.icon {
+  gap: 20px;
+}
+
+.info {
+  align-items: center;
+  gap: 10px;
+}
+
+.notifiche {
+  background-color: #8edafc;
+}
+
+.fa-bell-slash {
+  background-color: white;
+  text-align: center;
+  line-height: 50px;
+  color: #8edafc;
+}
+
+.cerca {
+  background-color: #fafafa;
+  height: 50px;
+  padding: 8px;
+}
+
+.cerca-chat {
+  background-color: #ffffff;
+  padding-left: 25px;
+  align-items: center;
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  padding-left: 40px;
+}
+
+.amici {
+  background-color: #ffffff;
+  border-top: 1px solid lightgray;
+  height: 100%;
+}
+
+.info-amici {
+  gap: 10px;
+}
+
+li {
+  list-style: none;
 }

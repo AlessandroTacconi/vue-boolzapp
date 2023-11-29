@@ -3,17 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Boolzapp</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="container flex">
+        <div id="left-side">
+          <header class="flex scheda">
+            <div class="flex info">
+              <div>
+                <img src="img/avatar_io.jpg" alt="avatar_io" class="avatar" />
+              </div>
+              <div>Nome Utente</div>
+            </div>
+            <div class="flex icon">
+              <div><i class="fa-solid fa-circle-notch"></i></div>
+              <div><i class="fa-solid fa-message"></i></div>
+              <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </div>
+          </header>
+          <main>
+            <div class="notifiche scheda">
+              <div class="flex info">
+                <div><i class="fa-solid fa-bell-slash avatar"></i></div>
+                <div>
+                  <div>Ricevi notifiche di nuovi messaggi</div>
+                  <div class="testo-grigio">Attiva notifiche desktop</div>
+                </div>
+              </div>
+            </div>
+            <div class="cerca">
+              <div class="cerca-chat flex">
+                <i class="fa-solid fa-magnifying-glass testo-grigio"></i>
+                <input
+                  type="text"
+                  class="search-box testo-grigio"
+                  placeholder="Cerca o inizia una nuova chat"
+                />
+              </div>
+            </div>
+            <div>
+              <ul v-for="(contact, index) in contacts" class="amici scheda">
+                <li>
+                  <div class="flex info-amici">
+                    <div>
+                      <img
+                        :src="contact.avatar"
+                        :alt="contact.name"
+                        class="avatar"
+                      />
+                    </div>
+                    <div>{{ contact.name }}</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="main.js"></script>
   </body>
