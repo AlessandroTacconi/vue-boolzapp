@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boolzapp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="flex container">
+        <div id="left-side">
+          <header class="flex scheda">
+            <div class="flex info">
+              <div>
+                <img src="img/avatar_io.jpg" alt="avatar_io" class="avatar" />
+              </div>
+              <div>Nome Utente</div>
+            </div>
+            <div class="flex icon">
+              <div><i class="fa-solid fa-circle-notch"></i></div>
+              <div><i class="fa-solid fa-message"></i></div>
+              <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </div>
+          </header>
+          <nav class="flex">
+            <div class="notifiche scheda">
+              <div class="flex info">
+                <div><i class="fa-solid fa-bell-slash avatar"></i></div>
+                <div>
+                  <div>Ricevi notifiche di nuovi messaggi</div>
+                  <div class="testo-grigio">Attiva notifiche desktop</div>
+                </div>
+              </div>
+            </div>
+            <div class="cerca">
+              <div class="cerca-chat flex">
+                <i class="fa-solid fa-magnifying-glass testo-grigio"></i>
+                <input
+                  type="text"
+                  class="search-box testo-grigio"
+                  placeholder="Cerca o inizia una nuova chat"
+                />
+              </div>
+            </div>
+            <div class="lista-amici">
+              <ul v-for="(contact, index) in contacts" class="amici scheda">
+                <li @click="mostraChatAmico(index)">
+                  <div class="flex info-amici">
+                    <div>
+                      <img
+                        :src="contact.avatar"
+                        :alt="contact.name"
+                        class="avatar"
+                      />
+                    </div>
+                    <div>
+                      <div>{{ contact.name }}</div>
+                      <div class="testo-grigio">
+                        {{ contact.messages[contact.messages.length - 1].message
+                        }}
+                      </div>
+                    </div>
+                    <div class="testo-grigio orario">
+                      {{ contact.messages[contact.messages.length -
+                      1].date.substring(11, 16) }}
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div id="right-side">
+          <header class="flex scheda">
+            <div class="flex info">
+              <div>
+                <img
+                  :src="contacts[indiceContacts].avatar"
+                  alt="contacts[indiceContacts].avatar"
+                  class="avatar"
+                />
+              </div>
+              <div>
+                <div>{{ contacts[indiceContacts].name }}</div>
+                <div class="testo-grigio">
+                  Ultimo accesso oggi alle {{ contacts[indiceContacts].messages[
+                  contacts[indiceContacts].messages.length - 1
+                  ].date.substring(11, 16) }}
+                </div>
+              </div>
+            </div>
+            <div class="flex icon gray">
+              <div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div><i class="fa-solid fa-paperclip"></i></div>
+              <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </div>
+          </header>
+          <main class="chat flex">
+            <div
+              v-for="(message, index) in contacts[indiceContacts].messages"
+              :class="{ 'sent': message.status === 'sent', 'received': message.status === 'received' }"
+              class="chat-bubble flex"
+            >
+              <div>{{ message.message }}</div>
+              <div class="date">{{ message.date.substring(11, 16) }}</div>
+            </div>
+          </main>
+          <footer class="barra-scrittura scheda flex">
+            <div><i class="fa-regular fa-face-smile"></i></div>
+            <div class="barra">
+              <div class="cerca-chat flex">
+                <input
+                  type="text"
+                  class="search-box testo-grigio"
+                  placeholder="Scrivi messaggio"
+                />
+              </div>
+            </div>
+            <div><i class="fa-solid fa-microphone"></i></div>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

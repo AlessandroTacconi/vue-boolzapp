@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom, #009688 20%, #dbdbd3 20%);
+  min-height: 100vh;
+}
+
+.container {
+  justify-content: center;
+  padding: 20px 100px;
+}
+
+.verde {
+  height: 120px;
+  background-color: #009788;
+}
+
+.giallo {
+  background-color: #dbdbd1;
+  height: 100vh;
+}
+
+.testo-grigio {
+  font-size: 14px;
+  color: gray;
+}
+
+.gray {
+  color: gray;
+}
+
+.flex {
+  display: flex;
+}
+
+.chat-bubble {
+  width: 310px;
+  padding: 15px 0;
+  padding-left: 20px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.date {
+  font-size: 10px;
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+}
+
+.orario {
+  position: absolute;
+  right: 4px;
+  bottoptom: 4px;
+}
+
+header {
+  background-color: #eaeaea;
+  justify-content: space-between;
+  border-right: 1px solid black;
+  align-items: center;
+  height: 70px;
+}
+
+.scheda {
+  padding: 10px 25px 10px 10px;
+}
+
+#left-side {
+  min-width: 450px;
+  display: flex;
+  flex-direction: column;
+  height: 790px;
+}
+
+#right-side {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  max-height: 790px;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.icon {
+  gap: 10px;
+}
+
+.info {
+  align-items: center;
+  gap: 10px;
+}
+
+nav {
+  flex-direction: column;
+  height: 720px;
+}
+
+.notifiche {
+  background-color: #8edafc;
+  height: 80px;
+}
+
+.fa-bell-slash {
+  background-color: white;
+  text-align: center;
+  line-height: 50px;
+  color: #8edafc;
+}
+
+.cerca {
+  background-color: #fafafa;
+  padding: 8px;
+}
+
+.cerca-chat {
+  background-color: #ffffff;
+  padding-left: 15px;
+  align-items: center;
+}
+
+.search-box {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  padding-left: 20px;
+}
+
+.lista-amici {
+  background-color: #ffffff;
+  overflow-y: scroll;
+  flex-grow: 1;
+}
+
+.amici {
+  border-top: 1px solid lightgray;
+}
+
+.amici:hover {
+  background-color: #e9ebeb;
+  cursor: pointer;
+}
+
+.info-amici {
+  gap: 10px;
+  position: relative;
+}
+
+li {
+  list-style: none;
+}
+
+.chat {
+  flex-grow: 1;
+  background-image: url('img/mine.jpg');
+  overflow-y: scroll;
+  flex-direction: column;
+  gap: 10px;
+  padding: 55px 0;
+}
+
+.sent {
+  background-color: #d5f9ba;
+  margin-right: 100px;
+  align-self: flex-end;
+}
+
+.received {
+  background-color: #ffffff;
+  margin-left: 100px;
+  align-self: flex-start;
+}
+
+.barra-scrittura {
+  background-color: #f3eeea;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.barra {
+  flex-grow: 1;
+}
+
+.barra .cerca-chat {
+  padding-left: 0;
+  border-radius: 70px;
+}
+
+.barra {
+  padding: 0 40px;
+}
+
+.barra .search-box {
+  border-radius: 4px;
+}
