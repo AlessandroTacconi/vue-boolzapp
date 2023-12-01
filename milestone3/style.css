@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #009688 20%, #dbdbd3 20%);
+  background: linear-gradient(to bottom, #009688 20%, #dbdbd3 0);
   min-height: 100vh;
 }
 
@@ -52,7 +52,7 @@ body {
 header {
   background-color: #eaeaea;
   justify-content: space-between;
-  border-right: 1px solid black;
+
   align-items: center;
   height: 70px;
 }
@@ -65,14 +65,15 @@ header {
   min-width: 450px;
   display: flex;
   flex-direction: column;
-  height: 790px;
+  height: 90%;
+  border-right: 1px solid lightgray;
 }
 
 #right-side {
   width: 900px;
   display: flex;
   flex-direction: column;
-  max-height: 790px;
+  max-height: 90%;
 }
 
 .avatar {
@@ -138,6 +139,10 @@ nav {
 .amici:hover {
   background-color: #e9ebeb;
   cursor: pointer;
+}
+
+.active {
+  background-color: #e9ebeb;
 }
 
 .info-amici {

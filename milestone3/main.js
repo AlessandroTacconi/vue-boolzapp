@@ -188,18 +188,22 @@ createApp({
       this.indiceContacts = index;
     },
 
+    cambiaColore(index) {
+      this.indiceContacts = index;
+    },
+
     inviaMessaggio() {
       const DateTime = luxon.DateTime;
       if (this.messaggioInviato.trim() !== '') {
         this.contacts[this.indiceContacts].messages.push({
-          date: DateTime.now().toLocaleString(DateTime.TIME_SHORT),
+          date: DateTime.now().toLocaleString(DateTime.TIME_SIMPLE),
           message: this.messaggioInviato,
           status: 'sent',
         });
         this.messaggioInviato = '';
         setTimeout(() => {
           this.contacts[this.indiceContacts].messages.push({
-            date: DateTime.now().toLocaleString(DateTime.TIME_SHORT),
+            date: DateTime.now().toLocaleString(DateTime.TIME_SIMPLE),
             message: 'Ok',
             status: 'received',
           });

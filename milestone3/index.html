@@ -62,7 +62,12 @@
             </div>
             <!-- lista amici -->
             <div class="lista-amici">
-              <ul v-for="(contact, index) in contacts" class="amici scheda">
+              <ul
+                v-for="(contact, index) in contacts"
+                class="amici scheda"
+                :class="{active: indiceContacts === index}"
+                @click="cambiaColore(index)"
+              >
                 <li @click="mostraChatAmico(index)">
                   <div class="flex info-amici">
                     <div>
